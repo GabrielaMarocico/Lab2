@@ -17,6 +17,12 @@ public class AnimalDomestic extends Animal implements IAnimal {
 	private long telefonStapan;
 	private boolean vaccinat;
 
+	/**
+	 * Constructor - primeste ca parametru numele animalului - cere
+	 * utilizatorului sa introduca datele despre animal
+	 * 
+	 * @numeAnimal - numele animalului
+	 */
 	public AnimalDomestic(String numeAnimal) {
 
 		super(numeAnimal);
@@ -37,11 +43,34 @@ public class AnimalDomestic extends Animal implements IAnimal {
 		this.vaccinat = ifVaccin;
 	}
 
+	/* Verifica daca animalul traieste sau nu */
 	@Override
 	public boolean StillAlive() {
 		return isAlive();
 	}
 
+	/* Verifica daca animalului is este foame */
+	@Override
+	public boolean isHungry() {
+		return this.isHungry();
+	}
+
+	/* Hraneste animalul */
+	@Override
+	public void feedAnimal() {
+		this.setHungry(false);
+	}
+
+	/*
+	 * Verifica daca animalul este Domestic, si returneaza true, iar in caz
+	 * contrat, returneaza false
+	 */
+	@Override
+	public boolean ifpet() {
+		return true;
+	}
+
+	/* Printeaza informatiile animalului */
 	@Override
 	public void print() throws AnimalException {
 		System.out.println("\tInformatii animal:");
@@ -80,11 +109,6 @@ public class AnimalDomestic extends Animal implements IAnimal {
 					+ ", poate fi contactat la numarul " + telefonStapan
 					+ " si " + ifVaccinat + " vaccinat");
 		}
-	}
-
-	@Override
-	public boolean ifpet() {
-		return true;
 	}
 
 	public String getNumeStapan() {

@@ -10,4 +10,8 @@ package interfaces;
 
 public interface IAnimal {
 	public boolean StillAlive();
+
+	public boolean isHungry();
+
+	public void feedAnimal();
 }

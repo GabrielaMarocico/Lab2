@@ -12,16 +12,30 @@ import exceptions.AnimalException;
  */
 
 public abstract class Animal {
+	/* Nume animal */
 	private String numeAnimal;
+
+	/* Traieste sau nu */
 	private boolean alive;
+
+	/* Tara de origine */
 	private String origine;
+
+	private boolean isHungry;
 
 	Scanner keyb = new Scanner(System.in);
 
 	public abstract void print() throws AnimalException;
 
+	/* Se va verifica daca animalul este Domestic sau Salbatic */
 	public abstract boolean ifpet();
 
+	/**
+	 * Constructor - primeste ca parametru numele animalului - cere
+	 * utilizatorului sa introduca datele despre animal
+	 * 
+	 * @numeAnimal - numele animalului
+	 */
 	public Animal(String numeAnimal) {
 
 		System.out.println("\tInformatii " + numeAnimal + " :");
@@ -34,6 +48,7 @@ public abstract class Animal {
 		this.setNumeAnimal(numeAnimal);
 		this.setAlive(alive);
 		this.setOrigine(origine);
+		this.isHungry = true;
 	}
 
 	public String getNumeAnimal() {
@@ -58,6 +73,14 @@ public abstract class Animal {
 
 	public void setOrigine(String origine) {
 		this.origine = origine;
+	}
+
+	public boolean isHungry() {
+		return isHungry;
+	}
+
+	public void setHungry(boolean isHungry) {
+		this.isHungry = isHungry;
 	}
 
 }
