@@ -1,8 +1,12 @@
 package main;
 
+import animal.*;
+
 import java.util.Scanner;
 
-import packages.StringClass;
+import exceptions.AnimalException;
+
+//import packages.StringClass;
 
 /**
  * 
@@ -19,9 +23,15 @@ public class Main {
 	 *
 	 * @param args
 	 *            The arguments to the executable
+	 * @throws AnimalException 
 	 */
-	public static void main(String[] args) {
-		System.out.println("My first program.");
+	
+	
+	public static void main(String[] args) throws AnimalException {
+		
+		Scanner keyb = new Scanner(System.in);
+		
+		/*System.out.println("My first program.");
 		System.out.println();
 
 		System.out.println("\t\tString 1");
@@ -43,12 +53,22 @@ public class Main {
 		 * reading from keyboard
 		 */
 
-		System.out.print("Scrieti ceva:");
-		Scanner keyb = new Scanner(System.in);
+		/*System.out.print("Scrieti ceva:");
 		String msg = keyb.nextLine();
 
 		StringClass s3 = new StringClass(msg);
-		s3.print();
+		s3.print();*/
+
+		//AnimalSalbatic ac=new AnimalSalbatic("Lup");
+		//ac.print();
+		
+		Animal aa=new AnimalDomestic("Lisa");
+		aa.print();
+		
+		System.out.println();
+		
+		AnimalSalbatic as=new AnimalSalbatic("Vulpe");
+		as.print();
 
 		keyb.close();
 	}

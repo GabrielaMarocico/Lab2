@@ -1,5 +1,9 @@
 package animal;
 
+import java.util.Scanner;
+
+import exceptions.AnimalException;
+
 /**
  * 
  * @author gby
@@ -8,15 +12,29 @@ package animal;
  */
 
 public abstract class Animal {
-	/* Numele animalului */
-	String numeAnimal;
-	boolean alive;
-	String origineContinent;
-	String hrana;
+	private String numeAnimal;
+	private boolean alive;
+	private String origine;
 
-	public abstract String food();
+	Scanner keyb = new Scanner(System.in);
 
-	public abstract void print();
+	public abstract void print() throws AnimalException;
+
+	public abstract boolean ifpet();
+
+	public Animal(String numeAnimal) {
+
+		System.out.println("\tInformatii " + numeAnimal + " :");
+		System.out.print("Traieste?(true/false) ");
+		boolean alive = keyb.nextBoolean();
+
+		System.out.print("Tara de origine: ");
+		String origine = keyb.next();
+
+		this.setNumeAnimal(numeAnimal);
+		this.setAlive(alive);
+		this.setOrigine(origine);
+	}
 
 	public String getNumeAnimal() {
 		return numeAnimal;
@@ -34,20 +52,12 @@ public abstract class Animal {
 		this.alive = alive;
 	}
 
-	public String getOrigineContinent() {
-		return origineContinent;
+	public String getOrigine() {
+		return origine;
 	}
 
-	public void setOrigineContinent(String origineContinent) {
-		this.origineContinent = origineContinent;
-	}
-
-	public String getHrana() {
-		return hrana;
-	}
-
-	public void setHrana(String hrana) {
-		this.hrana = hrana;
+	public void setOrigine(String origine) {
+		this.origine = origine;
 	}
 
 }

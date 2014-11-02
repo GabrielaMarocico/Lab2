@@ -1,7 +1,5 @@
 package interfaces;
 
-import exceptions.AnimalException;
-
 /**
  * 
  * @author gby
@@ -11,5 +9,5 @@ import exceptions.AnimalException;
  */
 
 public interface IAnimal {
-	public boolean StillAlive() throws AnimalException;
+	public boolean StillAlive();
 }
