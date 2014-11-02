@@ -2,16 +2,24 @@ package main;
 
 import java.util.Scanner;
 
-import string.StringClass;
+import packages.StringClass;
 
 /**
  * 
- * @author gby 
- * clasa Main in care am declarat obiecte de tipul StringClass
+ * @author gby
+ * 
+ *         This the main class of the project. It is also the entry point of the
+ *         application.
  *
  */
 
 public class Main {
+	/**
+	 * The entry point to the project
+	 *
+	 * @param args
+	 *            The arguments to the executable
+	 */
 	public static void main(String[] args) {
 		System.out.println("My first program.");
 		System.out.println();
