@@ -32,6 +32,10 @@ public class Main {
 
 	public static void main(String[] args) throws AnimalException {
 
+		
+		/**
+		 * reading from keyboard
+		 */
 		Scanner keyb = new Scanner(System.in);
 
 		/*
